@@ -1,0 +1,219 @@
+/* ─────────────────────────────────────────────────────────────
+   ULTRA-LUXURY GLASS PRISM SYSTEM — Blur Transparent UI
+   ───────────────────────────────────────────────────────────── */
+
+/* Fullscreen modal backdrop with deep blur and semi-transparent dark vignette */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  background: radial-gradient(
+    ellipse 120% 100% at 50% 40%,
+    rgba(10, 14, 26, 0.45) 0%,
+    rgba(5, 6, 12, 0.72) 100%
+  );
+  backdrop-filter: blur(28px) saturate(1.8);
+  -webkit-backdrop-filter: blur(28px) saturate(1.8);
+  pointer-events: auto;
+}
+
+/* Translucent Glass Prism Panel — Main Modal Container */
+.glass-prism-panel {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    rgba(18, 20, 30, 0.65) 0%,
+    rgba(10, 12, 18, 0.72) 50%,
+    rgba(15, 17, 26, 0.68) 100%
+  );
+  backdrop-filter: blur(48px) saturate(1.9);
+  -webkit-backdrop-filter: blur(48px) saturate(1.9);
+
+  /* Multi-color subtle prismatic border */
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  /* Layered glowing shadows for ultra-depth */
+  box-shadow:
+    0 0 0 1px rgba(184, 151, 90, 0.1) inset,
+    0 0 80px rgba(184, 151, 90, 0.08),
+    0 2px 0 rgba(255, 255, 255, 0.12) inset,
+    0 40px 90px rgba(0, 0, 0, 0.65),
+    0 0 40px rgba(100, 140, 255, 0.06);
+
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+/* Prismatic gold top-edge shimmer */
+.glass-prism-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 3%;
+  right: 3%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(212, 180, 114, 0.6) 25%,
+    rgba(255, 240, 200, 0.4) 50%,
+    rgba(212, 180, 114, 0.6) 75%,
+    transparent
+  );
+  z-index: 2;
+}
+
+/* Prismatic subtle left-edge highlight */
+.glass-prism-panel::after {
+  content: '';
+  position: absolute;
+  top: 3%;
+  bottom: 3%;
+  left: 0;
+  width: 1px;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(212, 180, 114, 0.35) 40%,
+    rgba(150, 180, 255, 0.2) 60%,
+    transparent
+  );
+  z-index: 2;
+}
+
+/* Inner content wrapper */
+.glass-prism-body {
+  padding: 2.5rem;
+  position: relative;
+  z-index: 3;
+}
+
+/* Glass Cards — translucent inner items */
+.prism-card {
+  background: rgba(255, 255, 255, 0.035);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.625rem;
+  transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.prism-card:hover {
+  border-color: rgba(212, 180, 114, 0.3);
+  background: rgba(212, 180, 114, 0.06);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 24px rgba(212, 180, 114, 0.08);
+}
+
+.prism-card.active {
+  border-color: rgba(212, 180, 114, 0.45);
+  background: rgba(212, 180, 114, 0.09);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.45),
+    0 0 35px rgba(212, 180, 114, 0.12),
+    0 0 0 1px rgba(212, 180, 114, 0.18) inset;
+}
+
+/* Divider lines */
+.prism-divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  margin: 1.5rem 0;
+}
+
+/* Section label badge */
+.label-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #d4b472;
+  background: rgba(184, 151, 90, 0.12);
+  border: 1px solid rgba(184, 151, 90, 0.28);
+  border-radius: 2rem;
+}
+
+/* Primary gold button */
+.btn-primary {
+  padding: 0.6rem 1.35rem;
+  border-radius: 0.5rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #0c0d10;
+  background: linear-gradient(135deg, #e4c482 0%, #b8975a 100%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 20px rgba(184, 151, 90, 0.25);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #f0d494 0%, #c8a86a 100%);
+  box-shadow: 0 6px 24px rgba(184, 151, 90, 0.4);
+  transform: translateY(-1px);
+}
+
+/* Ghost glass button */
+.btn-ghost {
+  padding: 0.6rem 1.35rem;
+  border-radius: 0.5rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #aaa;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-ghost:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Form fields */
+.field-label {
+  display: block;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.575rem;
+  font-weight: 600;
+  color: #888;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+}
+
+.field {
+  width: 100%;
+  padding: 0.65rem 0.875rem;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  color: #e8e8e8;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.775rem;
+  outline: none;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(10px);
+}
+
+.field:focus {
+  border-color: rgba(212, 180, 114, 0.5);
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0 16px rgba(212, 180, 114, 0.15);
+}

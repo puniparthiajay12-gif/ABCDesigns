@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-dark: #0a0a0a;
+    --bg-card: rgba(20, 20, 20, 0.8);
+    --accent-gold: #c5a977;
+    /* Subtle champagne gold */
+    --accent-glow: rgba(190, 185, 177, 0.15);
+    --border-subtle: rgba(255, 255, 255, 0.08);
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-dark);
+    color: #e5e5e5;
+    user-select: none;
+  }
+
+  h1,
+  h2,
+  h3,
+  .font-heading {
+    font-family: 'Montserrat', sans-serif;
+  }
+}
+
+/* Glassmorphism for a rich, official look */
+.glass-panel {
+  background: rgba(18, 18, 18, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.glass-panel-gold {
+  background: rgba(18, 18, 18, 0.75);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(197, 169, 119, 0.2);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6),
+    0 0 30px var(--accent-glow),
+    inset 0 1px 0 rgba(197, 169, 119, 0.1);
+}
+
+.blueprint-grid-bg {
+  background-size: 40px 40px;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+/* Elegant Text Gradients */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #ffffff 0%, #c5a977 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.silver-gradient-text {
+  background: linear-gradient(135deg, #ffffff 0%, #a3a3a3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Minimal Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(10, 10, 10, 0.9);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(197, 169, 119, 0.3);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(82, 80, 77, 0.6);
+}
