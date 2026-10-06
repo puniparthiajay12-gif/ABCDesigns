@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import CanvasContainer from './components/3d/CanvasContainer';
-import IntroOverlay from './components/ui/IntroOverlay';
-import HeaderNav from './components/ui/HeaderNav';
-import HUDOverlay from './components/ui/HUDOverlay';
-import StageControls from './components/ui/StageControls';
-import AboutSection from './components/ui/AboutSection';
-import ServicesSection from './components/ui/ServicesSection';
-import CategoriesSection from './components/ui/CategoriesSection';
-import ProjectsSection from './components/ui/ProjectsSection';
-import ContactSection from './components/ui/ContactSection';
+import CanvasContainer from './CanvasContainer';
+import IntroOverlay from './IntroOverlay';
+import HeaderNav from './HeaderNav';
+import HUDOverlay from './HUDOverlay';
+import StageControls from './StageControls';
+
+import AboutSection from './AboutSection';
+import ServicesSection from './ServicesSection';
+import CategoriesSection from './CategoriesSection';
+import ProjectsSection from './ProjectsSection';
+import ContactSection from './ContactSection';
 
 export default function App() {
   const [activeSection, setActiveSection] = useState('intro');
